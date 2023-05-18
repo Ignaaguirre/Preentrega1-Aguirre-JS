@@ -9,7 +9,7 @@ let edad = prompt("Ingresa tu edad:");
 
 if (edad >= 18) {
 
-  alert("Bienvenido a la pagina!");
+  alert("Bienvenido a la pagina!!");
 } else {
 
  alert("Lo siento, no tienes edad para ver esta pagina");
