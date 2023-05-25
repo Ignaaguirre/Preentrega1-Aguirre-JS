@@ -32,5 +32,134 @@ else{
 alert("Echale un vistazo a nuestros planes!")
 }
 
+// la idea es tener una tienda de productos, que dependiendo el nivel de plan que tenes, te da un porcentaje  de descuento
+
+// producto numero 1=1000;
+// producto numero 2=2500;
+// producto numero 3=5000;
+
+let compra = prompt("Ingrese el numero del producto que quiere comprar")
+if (compra == 1)
+{
+ let precio = 1000;
+ let planDesc = prompt("Ingrese el tipo de plan al que esta suscripto (rookie, intermedio, avanzado)")
+ 
+ 
+ if (planDesc == "rookie")
+ {
+  var precioOriginal=precio;
+  var precioFinal= descuentoRookie(precioOriginal);
+  alert("Monto a pagar con descuento plan rookie: $" + precioFinal)
+ }
+
+
+ if (planDesc == "intermedio")
+ {
+  var precioOriginal=precio;
+  var precioFinal= descuentoIntermedio(precioOriginal);
+  alert("Monto a pagar con descuento plan intermedio: $" + precioFinal)
+ }
+
+
+ if (planDesc == "avanzado")
+ {
+  var precioOriginal=precio;
+  var precioFinal= descuentoAvanzado(precioOriginal);
+  alert("Monto a pagar con descuento plan avanzado: $" + precioFinal)
+ }
+
+}
+if (compra == 2)
+{
+  let precio=2500;
+  let planDesc = prompt("Ingrese el tipo de plan al que esta suscripto (rookie, intermedio, avanzado)")
+ 
+ 
+  if (planDesc == "rookie")
+  {
+   var precioOriginal=precio;
+   var precioFinal= descuentoRookie(precioOriginal);
+   alert("Monto a pagar con descuento plan rookie: $" + precioFinal)
+  }
+ 
+ 
+  if (planDesc == "intermedio")
+  {
+   var precioOriginal=precio;
+   var precioFinal= descuentoIntermedio(precioOriginal);
+   alert("Monto a pagar con descuento plan intermedio: $" + precioFinal)
+  }
+ 
+ 
+  if (planDesc == "avanzado")
+  {
+   var precioOriginal=precio;
+   var precioFinal= descuentoAvanzado(precioOriginal);
+   alert("Monto a pagar con descuento plan avanzado: $" + precioFinal)
+  }
+ 
+} 
+if (compra ==3)
+{
+  let precio=5000;
+  let planDesc = prompt("Ingrese el tipo de plan al que esta suscripto (rookie, intermedio, avanzado)")
+ 
+ 
+ if (planDesc == "rookie")
+ {
+  var precioOriginal=precio;
+  var precioFinal= descuentoRookie(precioOriginal);
+  alert("Monto a pagar con descuento plan rookie: $" + precioFinal)
+ }
+
+
+ if (planDesc == "intermedio")
+ {
+  var precioOriginal=precio;
+  var precioFinal= descuentoIntermedio(precioOriginal);
+  alert("Monto a pagar con descuento plan intermedio: $" + precioFinal)
+ }
+
+
+ if (planDesc == "avanzado")
+ {
+  var precioOriginal=precio;
+  var precioFinal= descuentoAvanzado(precioOriginal);
+  alert("Monto a pagar con descuento plan avanzado: $" + precioFinal)
+ }
+
+}
+
+
+
+
+
+
+function descuentoRookie(precio)
+{
+var descuento = precio * 0.1; //descuento de 10%
+var precioDescontado= precio - descuento;
+return precioDescontado;
+}
+
+
+function descuentoIntermedio(precio)
+{
+var descuento = precio * 0.2; //descuento de 20%
+var precioDescontado= precio - descuento;
+return precioDescontado;
+}
+
+function descuentoAvanzado(precio)
+{
+var descuento = precio * 0.25; //descuento de 25%
+var precioDescontado= precio - descuento;
+return precioDescontado;
+}
+
+
+
+
+
 
 
