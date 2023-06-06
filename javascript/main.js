@@ -28,16 +28,43 @@ for (var Cont = 1; Cont <= maxIntentos; Cont++) {
   alert("Bienvenido " + userInput + " !");
 }
 else{
-  window.location.href = "pages/planes.html";
-alert("Echale un vistazo a nuestros planes!")
+let nuevoNombre= prompt("Ingrese su nombre: ")
+let nuevaEdad= prompt("Ingrese su edad: ")
+let nuevaDireccion= prompt("Ingrese su direccion: ")
+let nuevoPlan= prompt("Ingrese su plan deseado: ")
+const cliente1= new Cliente (nuevoNombre,nuevaEdad,nuevaDireccion,nuevoPlan);
+console.log(cliente1)
+alert("Bienvenido "+ cliente1.nombre + "!")
 }
-
+function Cliente (nombreCliente, edadCliente,direccionCliente,planCliente){
+  this.nombre=nombreCliente;
+  this.edad=edadCliente;
+  this.direccion=direccionCliente;
+  this.plan=planCliente;
+}
 // la idea es tener una tienda de productos, que dependiendo el nivel de plan que tenes, te da un porcentaje  de descuento
 
 // producto numero 1=1000;
 // producto numero 2=2500;
 // producto numero 3=5000;
+const producto1 ={
+  nombre: "Botella Anbu",
+  precio:1000,
+  idProducto:0101,
 
+}
+const producto2 ={
+  nombre: "Remera Anbu",
+  precio:2500,
+  idProducto:0202,
+
+}
+const producto3 ={
+  nombre: "Buzo Anbu",
+  precio:5000,
+  idProducto:0303,
+
+}
 let compra = prompt("Ingrese el numero del producto que quiere comprar")
 if (compra == 1)
 {
@@ -156,6 +183,11 @@ var descuento = precio * 0.25; //descuento de 25%
 var precioDescontado= precio - descuento;
 return precioDescontado;
 }
+
+
+
+
+
 
 
 
