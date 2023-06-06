@@ -1,10 +1,10 @@
-let userInput = prompt("Ingrese tu nombre:");
+//let userInput = prompt("Ingrese tu nombre:");
 
-let edad = prompt("Ingresa tu edad:");
-if (edad <= 17){
-  alert("Lo siento, no tienes edad para ver esta pagina");
-   window.location.replace("https://www.google.com/search?q=prohibido+bebes&tbm=isch&ved=2ahUKEwj-ztXQ_-v9AhV5uJUCHYYMBNsQ2-cCegQIABAA&oq=prohibido+bebes&gs_lcp=CgNpbWcQDDIECCMQJzIFCAAQgAQyBggAEAcQHjIGCAAQCBAeUABYAGCPCWgAcAB4AIABaYgBaZIBAzAuMZgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=SRkZZL6GDfnw1sQPhpmQ2A0&bih=627&biw=1325&client=opera-gx&hs=fOB");
- }
+//let edad = prompt("Ingresa tu edad:");//
+//if (edad <= 17){
+ // alert("Lo siento, no tienes edad para ver esta pagina");
+  // window.location.replace("https://www.google.com/search?q=prohibido+bebes&tbm=isch&ved=2ahUKEwj-ztXQ_-v9AhV5uJUCHYYMBNsQ2-cCegQIABAA&oq=prohibido+bebes&gs_lcp=CgNpbWcQDDIECCMQJzIFCAAQgAQyBggAEAcQHjIGCAAQCBAeUABYAGCPCWgAcAB4AIABaYgBaZIBAzAuMZgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=SRkZZL6GDfnw1sQPhpmQ2A0&bih=627&biw=1325&client=opera-gx&hs=fOB");
+ //}
  
 let userVar = prompt("Ya es cliente de ANBU GYM? :");
 if (userVar == "si" || userVar=="SI"|| userVar=="yes"|| userVar=="Si"|| userVar=="YES" ){
@@ -30,17 +30,27 @@ for (var Cont = 1; Cont <= maxIntentos; Cont++) {
 else{
 let nuevoNombre= prompt("Ingrese su nombre: ")
 let nuevaEdad= prompt("Ingrese su edad: ")
+if (nuevaEdad <= 17){
+  alert("Lo siento, no tienes edad para ver esta pagina");
+
+   window.location.replace("https://www.google.com/search?q=prohibido+bebes&tbm=isch&ved=2ahUKEwj-ztXQ_-v9AhV5uJUCHYYMBNsQ2-cCegQIABAA&oq=prohibido+bebes&gs_lcp=CgNpbWcQDDIECCMQJzIFCAAQgAQyBggAEAcQHjIGCAAQCBAeUABYAGCPCWgAcAB4AIABaYgBaZIBAzAuMZgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=SRkZZL6GDfnw1sQPhpmQ2A0&bih=627&biw=1325&client=opera-gx&hs=fOB");
+
+  }
 let nuevaDireccion= prompt("Ingrese su direccion: ")
 let nuevoPlan= prompt("Ingrese su plan deseado: ")
 const cliente1= new Cliente (nuevoNombre,nuevaEdad,nuevaDireccion,nuevoPlan);
 console.log(cliente1)
-alert("Bienvenido "+ cliente1.nombre + "!")
+
+cliente1.bienvenida()
 }
 function Cliente (nombreCliente, edadCliente,direccionCliente,planCliente){
   this.nombre=nombreCliente;
   this.edad=edadCliente;
   this.direccion=direccionCliente;
   this.plan=planCliente;
+  this.bienvenida=function(){
+    alert("Bienvenido "+ this.nombre)
+  }
 }
 // la idea es tener una tienda de productos, que dependiendo el nivel de plan que tenes, te da un porcentaje  de descuento
 
@@ -183,8 +193,6 @@ var descuento = precio * 0.25; //descuento de 25%
 var precioDescontado= precio - descuento;
 return precioDescontado;
 }
-
-
 
 
 
