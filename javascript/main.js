@@ -8,11 +8,11 @@
  
 let userVar = prompt("Ya es cliente de ANBU GYM? :");
 if (userVar == "si" || userVar=="SI"|| userVar=="yes"|| userVar=="Si"|| userVar=="YES" ){
-var varContra = "contraseña";
-var maxIntentos = 3;
+const varContra = "contraseña";
+ let maxIntentos = 3;
 
-for (var Cont = 1; Cont <= maxIntentos; Cont++) {
-  var contraIngresada = prompt("Ingrese la contraseña (Intento n°" + Cont + " de " + maxIntentos + ")");
+for (const Cont = 1; Cont <= maxIntentos; Cont++) {
+  let contraIngresada = prompt("Ingrese la contraseña (Intento n°" + Cont + " de " + maxIntentos + ")");
 
   if (contraIngresada === varContra) {
     alert("Contraseña Correcta. Acceso autorizado");
@@ -57,24 +57,24 @@ function Cliente (nombreCliente, edadCliente,direccionCliente,planCliente){
 // producto numero 1=1000;
 // producto numero 2=2500;
 // producto numero 3=5000;
-const producto1 ={
-  nombre: "Botella Anbu",
-  precio:1000,
-  idProducto:0101,
+const productos = [ 
+    {
+       nombre: "Botella Anbu",
+       precio:1000,
+       idProducto:0101
+     }, 
+     {
+        nombre: "Remera Anbu",
+        precio:2500,
+        idProducto:0202
+       },
+       {   
+         nombre: "Buzo Anbu",
+         precio:5000,
+         idProducto:0303
+       } 
+  ]
 
-}
-const producto2 ={
-  nombre: "Remera Anbu",
-  precio:2500,
-  idProducto:0202,
-
-}
-const producto3 ={
-  nombre: "Buzo Anbu",
-  precio:5000,
-  idProducto:0303,
-
-}
 let compra = prompt("Ingrese el numero del producto que quiere comprar")
 if (compra == 1)
 {
@@ -92,16 +92,16 @@ if (compra == 1)
 
  if (planDesc == "intermedio")
  {
-  var precioOriginal=precio;
-  var precioFinal= descuentoIntermedio(precioOriginal);
+  let precioOriginal=precio;
+  let precioFinal= descuentoIntermedio(precioOriginal);
   alert("Monto a pagar con descuento plan intermedio: $" + precioFinal)
  }
 
 
  if (planDesc == "avanzado")
  {
-  var precioOriginal=precio;
-  var precioFinal= descuentoAvanzado(precioOriginal);
+  let precioOriginal=precio;
+  let precioFinal= descuentoAvanzado(precioOriginal);
   alert("Monto a pagar con descuento plan avanzado: $" + precioFinal)
  }
 
@@ -114,24 +114,24 @@ if (compra == 2)
  
   if (planDesc == "rookie")
   {
-   var precioOriginal=precio;
-   var precioFinal= descuentoRookie(precioOriginal);
+   let precioOriginal=precio;
+   let precioFinal= descuentoRookie(precioOriginal);
    alert("Monto a pagar con descuento plan rookie: $" + precioFinal)
   }
  
  
   if (planDesc == "intermedio")
   {
-   var precioOriginal=precio;
-   var precioFinal= descuentoIntermedio(precioOriginal);
+   let precioOriginal=precio;
+   let precioFinal= descuentoIntermedio(precioOriginal);
    alert("Monto a pagar con descuento plan intermedio: $" + precioFinal)
   }
  
  
   if (planDesc == "avanzado")
   {
-   var precioOriginal=precio;
-   var precioFinal= descuentoAvanzado(precioOriginal);
+   let precioOriginal=precio;
+   let precioFinal= descuentoAvanzado(precioOriginal);
    alert("Monto a pagar con descuento plan avanzado: $" + precioFinal)
   }
  
@@ -144,24 +144,24 @@ if (compra ==3)
  
  if (planDesc == "rookie")
  {
-  var precioOriginal=precio;
-  var precioFinal= descuentoRookie(precioOriginal);
+  let precioOriginal=precio;
+  let precioFinal= descuentoRookie(precioOriginal);
   alert("Monto a pagar con descuento plan rookie: $" + precioFinal)
  }
 
 
  if (planDesc == "intermedio")
  {
-  var precioOriginal=precio;
-  var precioFinal= descuentoIntermedio(precioOriginal);
+  let precioOriginal=precio;
+  let precioFinal= descuentoIntermedio(precioOriginal);
   alert("Monto a pagar con descuento plan intermedio: $" + precioFinal)
  }
 
 
  if (planDesc == "avanzado")
  {
-  var precioOriginal=precio;
-  var precioFinal= descuentoAvanzado(precioOriginal);
+  let precioOriginal=precio;
+  let precioFinal= descuentoAvanzado(precioOriginal);
   alert("Monto a pagar con descuento plan avanzado: $" + precioFinal)
  }
 
@@ -174,23 +174,23 @@ if (compra ==3)
 
 function descuentoRookie(precio)
 {
-var descuento = precio * 0.1; //descuento de 10%
-var precioDescontado= precio - descuento;
+let descuento = precio * 0.1; //descuento de 10%
+let precioDescontado= precio - descuento;
 return precioDescontado;
 }
 
 
 function descuentoIntermedio(precio)
 {
-var descuento = precio * 0.2; //descuento de 20%
-var precioDescontado= precio - descuento;
+let descuento = precio * 0.2; //descuento de 20%
+let precioDescontado= precio - descuento;
 return precioDescontado;
 }
 
 function descuentoAvanzado(precio)
 {
-var descuento = precio * 0.25; //descuento de 25%
-var precioDescontado= precio - descuento;
+let descuento = precio * 0.25; //descuento de 25%
+let precioDescontado= precio - descuento;
 return precioDescontado;
 }
 
