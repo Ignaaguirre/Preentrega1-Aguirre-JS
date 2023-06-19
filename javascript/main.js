@@ -1,18 +1,10 @@
-//let userInput = prompt("Ingrese tu nombre:");
-
-//let edad = prompt("Ingresa tu edad:");//
-//if (edad <= 17){
- // alert("Lo siento, no tienes edad para ver esta pagina");
-  // window.location.replace("https://www.google.com/search?q=prohibido+bebes&tbm=isch&ved=2ahUKEwj-ztXQ_-v9AhV5uJUCHYYMBNsQ2-cCegQIABAA&oq=prohibido+bebes&gs_lcp=CgNpbWcQDDIECCMQJzIFCAAQgAQyBggAEAcQHjIGCAAQCBAeUABYAGCPCWgAcAB4AIABaYgBaZIBAzAuMZgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=SRkZZL6GDfnw1sQPhpmQ2A0&bih=627&biw=1325&client=opera-gx&hs=fOB");
- //}
- 
  let userVar = prompt("Ya es cliente de ANBU GYM? :");
  if (userVar == "si" || userVar=="SI"|| userVar=="yes"|| userVar=="Si"|| userVar=="YES" ){
   const varContra = "contraseña";
   let maxIntentos = 3;
   
-  for (var Cont = 1; Cont <= maxIntentos; Cont++) {
-    var contraIngresada = prompt("Ingrese la contraseña (Intento n°" + Cont + " de " + maxIntentos + ")");
+  for (let Cont = 1; Cont <= maxIntentos; Cont++) {
+    let contraIngresada = prompt("Ingrese la contraseña (Intento n°" + Cont + " de " + maxIntentos + ")");
   
     if (contraIngresada === varContra) {
       alert("Contraseña Correcta. Acceso autorizado");
@@ -25,7 +17,7 @@
       }
     }
   }
-    alert("Bienvenido " + userInput + " !");
+    alert("Bienvenido nuevamente!");
   }
   
  else{
@@ -59,19 +51,22 @@
  // producto numero 3=5000;
  const productos = [ 
      {
-        nombre: "Botella Anbu",
+        nombre: "BOTELLA ANBU",
         precio:1000,
-        idProducto:0101
+        idProducto:1,
+        categoria:"accesorio"
       }, 
       {
-         nombre: "Remera Anbu",
+         nombre: "REMERA ANBU",
          precio:2500,
-         idProducto:0202
+         idProducto:2,
+         categoria:"ropa"
         },
         {   
-          nombre: "Buzo Anbu",
+          nombre: "BUZO ANBU",
           precio:5000,
-          idProducto:0303
+          idProducto:3,
+          categoria: "ropa"
         } 
    ]
   // const afirmaciones=["si","SI","Si","sI","yes","YES"] // quise reemplazar el openTieda para que recorra el array y buscar el si en vez de estarlo escribiendolo siempre.
@@ -79,106 +74,33 @@
   let contador=0;
   for(const producto of productos){
     contador+=1; 
-   salida+= contador+"-"+ producto.nombre+ "$ "+ producto.precio+ "\n"
+   salida+=contador+"-" + producto.nombre+ "$ "+ producto.precio+ "\n"
   }
  
  let openTienda = prompt ("Desea comprar algo de nuestra tienda?"+ "\n"+ salida)
  if (openTienda == "si" || userVar=="SI"|| userVar=="yes"|| userVar=="Si"|| userVar=="YES" )
  {
- let compra = prompt("Ingrese el numero del producto que quiere comprar")
+  let compra = prompt("Ingrese el nombres del producto que quiere comprar")
+  let encontrarObjeto = productos.find(function(object) {
+    return object.nombre === compra;
 
- if (compra == 1)
- {
-  let precio = 1000;
-  let planDesc = prompt("Ingrese el tipo de plan al que esta suscripto (rookie, intermedio, avanzado)")
-  
-  
-  if (planDesc == "rookie")
-  {
-   var precioOriginal=precio;
-   var precioFinal= descuentoRookie(precioOriginal);
-   alert("Monto a pagar con descuento plan rookie: $" + precioFinal)
+  });
+  if (encontrarObjeto) {
+    console.log("Objecto a comprar:", encontrarObjeto);
+  } else {
+    console.log("Objecto no encontrado.");
   }
- 
- 
-  if (planDesc == "intermedio")
-  {
-   let precioOriginal=precio;
-   let precioFinal= descuentoIntermedio(precioOriginal);
-   alert("Monto a pagar con descuento plan intermedio: $" + precioFinal)
-  }
- 
- 
-  if (planDesc == "avanzado")
-  {
-   let precioOriginal=precio;
-   let precioFinal= descuentoAvanzado(precioOriginal);
-   alert("Monto a pagar con descuento plan avanzado: $" + precioFinal)
-  }
- 
- }
- if (compra == 2)
- {
-   let precio=2500;
-   let planDesc = prompt("Ingrese el tipo de plan al que esta suscripto (rookie, intermedio, avanzado)")
+  alert("El precio de la compra es de $ "+encontrarObjeto.precio)
+  let productosRopa=productos.filter(item => item.categoria=="ropa")
+  console.log(productosRopa);
+
+  let productosAccesorios=productos.filter(item => item.categoria=="accesorio")
+  console.log(productosAccesorios);
+
+  let categorias= productos.map(item=>item.categoria)
+  console.log(categorias);
   
-  
-   if (planDesc == "rookie")
-   {
-    let precioOriginal=precio;
-    let precioFinal= descuentoRookie(precioOriginal);
-    alert("Monto a pagar con descuento plan rookie: $" + precioFinal)
-   }
-  
-  
-   if (planDesc == "intermedio")
-   {
-    let precioOriginal=precio;
-    let precioFinal= descuentoIntermedio(precioOriginal);
-    alert("Monto a pagar con descuento plan intermedio: $" + precioFinal)
-   }
-  
-  
-   if (planDesc == "avanzado")
-   {
-    let precioOriginal=precio;
-    let precioFinal= descuentoAvanzado(precioOriginal);
-    alert("Monto a pagar con descuento plan avanzado: $" + precioFinal)
-   }
-  
- } 
- if (compra ==3)
- {
-   let precio=5000;
-   let planDesc = prompt("Ingrese el tipo de plan al que esta suscripto (rookie, intermedio, avanzado)")
-  
-  
-  if (planDesc == "rookie")
-  {
-   let precioOriginal=precio;
-   let precioFinal= descuentoRookie(precioOriginal);
-   alert("Monto a pagar con descuento plan rookie: $" + precioFinal)
-  }
- 
- 
-  if (planDesc == "intermedio")
-  {
-   let precioOriginal=precio;
-   let precioFinal= descuentoIntermedio(precioOriginal);
-   alert("Monto a pagar con descuento plan intermedio: $" + precioFinal)
-  }
- 
- 
-  if (planDesc == "avanzado")
-  {
-   let precioOriginal=precio;
-   let precioFinal= descuentoAvanzado(precioOriginal);
-   alert("Monto a pagar con descuento plan avanzado: $" + precioFinal)
-  }
- 
- }
- 
- 
+
  }
  
  
